@@ -1,0 +1,19 @@
+{
+  "name": "themes",
+  "version": "1.0.0",
+  "description": "Theme collection for our template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/websitesieutoc/themes.git"
+  },
+  "author": "Sieutoc Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/websitesieutoc/themes/issues"
+  },
+  "homepage": "https://github.com/websitesieutoc/themes#readme"
+}
