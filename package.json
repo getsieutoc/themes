@@ -1,5 +1,5 @@
 {
-  "name": "themes",
+  "name": "@sieutoc/themes",
   "version": "1.0.0",
   "description": "Theme collection for our template",
   "main": "index.js",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/websitesieutoc/themes/issues"
   },
-  "homepage": "https://github.com/websitesieutoc/themes#readme"
+  "homepage": "https://github.com/websitesieutoc/themes#README",
+  "dependencies": {
+    "@chakra-ui/react": "2.8.0"
+  }
 }
