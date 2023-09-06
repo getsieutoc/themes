@@ -9,9 +9,6 @@ on:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
-env:
-  CI: true
-
 jobs:
   publish-package:
     name: Publish to npm when release
@@ -46,8 +43,8 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          commit: "chore(changeset): version packages"
-          title: "chore(changeset): version packages"
+          commit: "chore(changeset): release ${{ steps.changesets.publishedPackages[0].version }}"
+          title: "chore(changeset): release ${{ steps.changesets.publishedPackages[0].version }}"
           publish: pnpm ci:publish
           version: pnpm ci:version
         env:
