@@ -1,5 +1,11 @@
 # @sieutoc/themes
 
+## 2.0.1
+
+### Patch Changes
+
+- [`e53c1fc`](https://github.com/websitesieutoc/themes/commit/e53c1fcf424a2d89e3117b2cb6d0c2d51a9f9761) Thanks [@sangdth](https://github.com/sangdth)! - try to use version
+
 ## 2.0.0
 
 ### Major Changes
