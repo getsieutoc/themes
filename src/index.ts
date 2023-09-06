@@ -1,3 +1,5 @@
 import minimalist from './minimalist';
 
-export default { minimalist };
+const themes: Record<string, unknown> = { minimalist };
+
+export default themes;
