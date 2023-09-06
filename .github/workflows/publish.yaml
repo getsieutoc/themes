@@ -43,8 +43,8 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          commit: chore(changeset) release ${{ join(steps.changesets.outputs.publishedPackages.*.version) }}
-          title: chore(changeset) release ${{ join(steps.changesets.outputs.publishedPackages.*.version) }}
+          commit: "chore(changeset): version packages"
+          title: "chore(changeset): version packages"
           publish: pnpm ci:publish
           version: pnpm ci:version
         env:
