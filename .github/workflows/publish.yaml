@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+    paths:
+      - ".changeset/**"
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -20,7 +22,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          fetch-depth: 2
+          fetch-depth: 0
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
@@ -33,19 +35,12 @@ jobs:
           node-version: 18
           cache: "pnpm"
           registry-url: "https://registry.npmjs.org"
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # Don't remove this!
-
-      - name: Setup npmrc
-        run: |
-          cat << EOF > "$HOME/.npmrc"
-            //registry.npmjs.org/:_authToken=$NPM_TOKEN
-          EOF
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
+
+      - name: Build packages
+        run: pnpm build
 
       - name: Create release
         id: changesets
@@ -58,3 +53,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # Don't remove this!
