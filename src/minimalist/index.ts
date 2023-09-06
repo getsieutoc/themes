@@ -1,15 +1,30 @@
-import { extendTheme } from '@chakra-ui/react'
+import { extendTheme, withDefaultColorScheme } from '@chakra-ui/react'
 
 // Global config for Chakra UI
-import config from './config'
+import config from './config';
 
 // Global style overrides
-import styles from './styles'
+import styles from './styles';
 
 // Foundational style overrides, most design tokens are defined here
-import borders from './foundations/borders'
+import colors from './foundations/colors';
+import borders from './foundations/borders';
 
 // Component style overrides
-import components from './components'
+import components from './components';
 
-export default extendTheme({ config, styles, borders, components })
+const overrides = {
+  config,
+  styles,
+  colors,
+  borders,
+  components,
+};
+
+export default extendTheme(
+  overrides,
+  withDefaultColorScheme({
+    colorScheme: 'mycolor',
+    components: ['Button'],
+  })
+);
