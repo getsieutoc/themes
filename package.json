@@ -22,7 +22,9 @@
     "clean": "rimraf dist",
     "lint": "eslint ./src --ext .ts,.tsx",
     "typecheck": "tsc --noEmit",
-    "build:fast": "tsup src"
+    "build:fast": "tsup src",
+    "ci:version": "changeset version",
+    "ci:publish": "changeset publish"
   },
   "sideEffects": false,
   "type": "module",
