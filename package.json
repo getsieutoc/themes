@@ -2,10 +2,6 @@
   "name": "@sieutoc/themes",
   "version": "1.0.0",
   "description": "Theme collection for our template",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/websitesieutoc/themes.git"
@@ -16,7 +12,37 @@
     "url": "https://github.com/websitesieutoc/themes/issues"
   },
   "homepage": "https://github.com/websitesieutoc/themes#README",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup src --dts",
+    "dev": "pnpm build:fast -- --watch",
+    "clean": "rimraf dist",
+    "typecheck": "tsc --noEmit",
+    "build:fast": "tsup src"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "main": "src/index.ts",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "tsup": {
+    "format": [
+      "cjs",
+      "esm"
+    ],
+    "target": "es2019",
+    "sourcemap": true
+  },
   "dependencies": {
     "@chakra-ui/react": "2.8.0"
+  },
+  "devDependencies": {
+    "rimraf": "5.0.1",
+    "tsup": "7.2.0"
   }
 }
