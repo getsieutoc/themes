@@ -1,5 +1,11 @@
 # @sieutoc/themes
 
+## 2.0.5
+
+### Patch Changes
+
+- [`14b7b20`](https://github.com/websitesieutoc/themes/commit/14b7b20323f3d764620c6edb0684b6aa6918ea97) Thanks [@sangdth](https://github.com/sangdth)! - change types
+
 ## 2.0.4
 
 ### Patch Changes
