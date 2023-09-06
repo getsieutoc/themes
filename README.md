@@ -1,6 +1,6 @@
 # @sieutoc/themes
 
-A theme collection for Sieutoc site generator
+A theme collection for Sieutoc site generator.
 
 ## Developing
 
