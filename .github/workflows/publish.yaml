@@ -7,6 +7,9 @@ on:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
+env:
+  CI: true
+
 jobs:
   publish-package:
     name: Publish to npm when release
@@ -31,24 +34,27 @@ jobs:
           cache: "pnpm"
           registry-url: "https://registry.npmjs.org"
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # Don't remove this!
+
+      - name: Setup npmrc
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
-
-      - name: Linting
-        run: pnpm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Create release
         id: changesets
         uses: changesets/action@v1
         with:
-          version: pnpm ci:version
           commit: "chore(changeset): version packages"
           title: "chore(changeset): version packages"
           publish: pnpm ci:publish
+          version: pnpm ci:version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
