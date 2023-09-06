@@ -1,3 +1,3 @@
 import minimalist from './minimalist';
 
-export default { minimalist }
+export default { minimalist };

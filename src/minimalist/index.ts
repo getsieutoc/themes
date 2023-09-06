@@ -1,4 +1,4 @@
-import { extendTheme, withDefaultColorScheme } from '@chakra-ui/react'
+import { extendTheme, withDefaultColorScheme } from '@chakra-ui/react';
 
 // Global config for Chakra UI
 import config from './config';
@@ -26,5 +26,5 @@ export default extendTheme(
   withDefaultColorScheme({
     colorScheme: 'mycolor',
     components: ['Button'],
-  })
+  }),
 );
