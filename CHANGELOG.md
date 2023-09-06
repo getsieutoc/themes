@@ -1,5 +1,11 @@
 # @sieutoc/themes
 
+## 2.0.3
+
+### Patch Changes
+
+- [`15650be`](https://github.com/websitesieutoc/themes/commit/15650bea30f14095b043ce9ce0938014cfffa013) Thanks [@sangdth](https://github.com/sangdth)! - removed the ngoacj
+
 ## 2.0.2
 
 ### Patch Changes
