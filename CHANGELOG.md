@@ -1,5 +1,11 @@
 # @sieutoc/themes
 
+## 2.0.6
+
+### Patch Changes
+
+- [`73ae256`](https://github.com/websitesieutoc/themes/commit/73ae256dd73be301e09e5288e47ae681ae8f8785) Thanks [@sangdth](https://github.com/sangdth)! - fixing import 1
+
 ## 2.0.5
 
 ### Patch Changes
