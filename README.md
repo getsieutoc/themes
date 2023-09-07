@@ -4,8 +4,10 @@ A theme collection for Sieutoc site generator.
 
 ## Usage
 
+Using pnpm (Recommended): 
+
 ```bash
-Using pnpm (Recommended): pnpm i @sieutoc/themes
+pnpm i -E @sieutoc/themes
 ```
 
 Then either use it directly with Chakra's theme Provider,
