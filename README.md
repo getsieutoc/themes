@@ -65,3 +65,16 @@ pnpm generate theme
 
 After that, answer the prompt with a theme name, plop will generate a blank theme starter.
 
+## Release
+
+We use `changeset` and `GitHub Actions` to auto generate new release PR.
+
+After some development steps, and you think it's good to releaes, simply run:
+
+```bash
+pnpm changeset
+```
+
+A prompt will ask you for a release name, enter a good message then commit and push it.
+
+Then push the changes. The changed commits will be automatically detected by GitHub Actions and it will be published to npm also automatically.
