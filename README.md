@@ -2,6 +2,30 @@
 
 A theme collection for Sieutoc site generator.
 
+## Usage
+
+```bash
+Using pnpm (Recommended): pnpm i @sieutoc/themes
+```
+
+Then either use it directly with Chakra's theme Provider,
+
+```bash
+import themes from '@sieutoc/themes';
+...
+<ThemeProvider theme={themes['minimalist']}>
+```
+
+or extend it with your own theme.
+
+```bash
+import themes from '@sieutoc/themes';
+...
+const baseTheme = themes['minimalist'];
+
+export const theme = extendTheme(baseTheme, yourCustomised);
+```
+
 ## Developing
 
 Clone the project
@@ -28,8 +52,14 @@ Start the server
 pnpm dev
 ```
 
-Copy the based theme
+## Generators
+
+We use `plop` for generating new theme.
 
 ```bash
-cp -r src/minimalist src/newname
+// At the root of themes directory, run:
+pnpm generate theme
 ```
+
+After that, answer the prompt with a theme name, plop will generate a blank theme starter.
+
