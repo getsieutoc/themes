@@ -14,6 +14,7 @@
   },
   "scripts": {
     "changeset": "changeset",
+    "generate": "plop",
     "build": "tsup src --dts",
     "dev": "pnpm build:fast -- --watch",
     "clean": "rimraf node_modules dist",
@@ -60,6 +61,7 @@
     "eslint-plugin-prettier": "5.0.0",
     "eslint-plugin-react": "7.28.0",
     "eslint-plugin-react-hooks": "4.3.0",
+    "plop": "4.0.0",
     "prettier": "3.0.3",
     "rimraf": "5.0.1",
     "tsup": "7.2.0",
